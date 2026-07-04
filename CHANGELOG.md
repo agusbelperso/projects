@@ -2,6 +2,17 @@
 
 ---
 
+## 2026-07-04 (adopt data-analysis skill from external remote)
+
+### Added
+- `.claude/skills/data-analysis/SKILL.md` — end-to-end data analysis assistant (Excel/CSV analysis, business metrics, ROI, HTML report generation, PPTX export) ported from the `data-skill` reference remote (`dongzhang84/data-analysis-skill`), invocable as `/data-analysis`.
+- `.claude/skills/data-analysis/references/{report-styles,html-templates,workflows,domain-knowledge}.md` — supporting reference docs the SKILL.md points to for style parameters, HTML component patterns, the detailed multi-expert workflow spec, and domain-specific analysis knowledge.
+- `.claude/skills/data-analysis/scripts/{read_excel.py,read_csv.py,html2pptx.js}` — executable helpers the skill shells out to for reading spreadsheets and converting HTML reports to PPTX. Each script self-installs its own missing dependencies (pandas/openpyxl/tabulate/chardet via pip; pptxgenjs/puppeteer via npm) on first run — nothing was installed as part of this commit.
+- `.claude/skills/data-analysis/package.json` — documents the two npm packages `html2pptx.js` auto-installs (`pptxgenjs`, `puppeteer`).
+
+### Context
+The upstream repo already used the `.claude/skills/<name>/SKILL.md` layout this repo's own skills were just migrated to (see the entry below), so this was a direct folder copy rather than a reformat. The remote's own `README.md`, `LICENSE`, `sample-data/`, `sample-output/`, and `.gitignore` were left behind — those describe the standalone upstream repo, not the skill package itself. `.claude/skills/coach/` and `.claude/skills/context-window/` remain untracked/pending review from prior work and are untouched by this commit.
+
 ## 2026-07-04 (make skills reachable via / command)
 
 ### Changed
