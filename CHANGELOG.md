@@ -2,6 +2,18 @@
 
 ---
 
+## 2026-07-04 (adopt operations-manager and people-analytics skills)
+
+### Added
+- `.claude/skills/operations-manager/SKILL.md` + `scripts/{capacity_planner,process_mapper,sla_tracker}.py` — workforce planning, process optimization, compliance, and operational-efficiency skill, invocable as `/operations-manager`.
+- `.claude/skills/people-analytics/SKILL.md` + `scripts/{attrition_predictor,headcount_planner,survey_analyzer}.py` — workforce analytics, attrition modeling, engagement analysis, and compensation-benchmarking skill, invocable as `/people-analytics`.
+
+### Changed
+- `CLAUDE.md` — added both skills to the skill inventory, including their overlap/relationship (people-analytics as the data foundation operations-manager draws on).
+
+### Context
+Both were adopted individually from the `claude-skills` reference remote's `hr-operations` bundle (`borghei/Claude-Skills`), which packages 4 skills via a `.claude-plugin` manifest — the plugin installs all 4 as a unit with no partial-install option, so a direct folder copy of just these 2 was more targeted than installing the plugin. `hr-business-partner` and `talent-acquisition` (the other 2 in the bundle) were intentionally not adopted. The upstream bundle's own `CLAUDE.md` was not copied verbatim — it documents all 4 skills, references sibling domains that don't exist in this repo, and its "planned Python tools" section names scripts that don't match what actually ships in the `operations-manager`/`people-analytics` folders (e.g. it references `org_chart_analyzer.py` and `compensation_benchmarker.py`, which don't exist). Only the accurate, applicable parts were folded into this repo's own `CLAUDE.md`.
+
 ## 2026-07-04 (move coach/context-window to global, strip sensitive references)
 
 ### Removed
