@@ -2,6 +2,17 @@
 
 ---
 
+## 2026-07-04 (move coach/context-window to global, strip sensitive references)
+
+### Removed
+- `.claude/skills/coach/` and `.claude/skills/context-window/` — removed from this repo entirely (both were still untracked/uncommitted). Relocated in cleaned-up form to `~/.claude/skills/coach/SKILL.md` and `~/.claude/skills/context-window/SKILL.md` so they work across every repo, not just this one.
+
+### Changed
+- `CLAUDE.md` — dropped `/coach` and `/context-window` from this repo's skill inventory (with a pointer to their new global location), and added the previously-undocumented `/data-analysis` skill to the inventory.
+
+### Context
+`coach.md` hardcoded a former/different account's home directory (`/Users/abeltraminopersoglia/...`), the user's name inline, and cross-referenced an external "10x-coach" framework and "CEO-defined metrics" tied to a former employer's internal system — none of which belonged in a personal, portable skill. The rewritten global version: uses `~/.claude/coaching_observations.md` and `~/.claude/CLAUDE.md` (no hardcoded username), refers to "the user" generically, drops the 10x-coach cross-reference and employer-specific jargon (Query Execution Gate, orchestrator Phase checks, `mbr-wbr-analyst`/`unit-economics` skill names) in favor of generic equivalents, so the five-dimension scoring applies to whatever the user is actually working on. `context-window.md` had no sensitive content, but its model-ID table was stale and was updated to current model IDs while moving it alongside `coach`.
+
 ## 2026-07-04 (adopt data-analysis skill from external remote)
 
 ### Added
