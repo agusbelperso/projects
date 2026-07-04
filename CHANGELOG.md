@@ -2,6 +2,14 @@
 
 ---
 
+## 2026-07-04 (ignore macOS Finder junk)
+
+### Changed
+- `.gitignore` — added a macOS section (`.DS_Store`, `.AppleDouble`, `.LSOverride`, `.Spotlight-V100`, `.Trashes`). The existing `.gitignore` was a Visual Studio template with no macOS entries, so Finder's auto-generated `.DS_Store` kept showing up as untracked.
+
+### Context
+`.DS_Store` isn't something anyone adds deliberately — Finder writes it just from browsing a folder. It was already excluded from commits per the staging rule in `push.md`, but without a `.gitignore` entry it kept resurfacing in `git status`.
+
 ## 2026-07-04 (repo bootstrap: CLAUDE.md, push skill, changelog)
 
 ### Added
