@@ -2,6 +2,15 @@
 
 ---
 
+## 2026-07-04 (add docs folder with HR forecasting slide reference)
+
+### Added
+- `docs/hr-forecasting-slides-reference.md` — text extraction of 4 slide screenshots from a SlideTeam "Cost Management Through Accurate HR Forecasting" PPT template (dashboard mockups, KPI slide, and a risk matrix), kept as a plain-text reference since the source page renders slides as images with no extractable text.
+- `docs/Strategic HR Cost Management.md` — copy of the same-named file that already existed at the repo root, duplicated into `docs/` at the user's request.
+
+### Context
+This is the first use of a `docs/` folder in this repo, for saving reference material (like slide/image content the user wants preserved as text) that isn't a skill file itself. The root-level `Strategic HR Cost Management.md` was left in place and untracked; only the `docs/` copy is part of this commit.
+
 ## 2026-07-04 (adopt operations-manager and people-analytics skills)
 
 ### Added
