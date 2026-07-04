@@ -1,4 +1,5 @@
 ---
+name: log-this
 description: Log the current session to ~/.claude/dashboard-data.jsonl following the 10x-coach Mode 2 format. Auto-pulls token usage from the session JSONL transcript, asks three questions, then writes the entry.
 ---
 

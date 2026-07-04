@@ -1,4 +1,5 @@
 ---
+name: push
 description: Commit and push changes to this repo — enforces CHANGELOG update, safe file staging, and correct commit conventions.
 ---
 

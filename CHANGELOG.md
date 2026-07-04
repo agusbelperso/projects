@@ -2,6 +2,15 @@
 
 ---
 
+## 2026-07-04 (make skills reachable via / command)
+
+### Changed
+- `push.md` → `.claude/skills/push/SKILL.md`, `prompt-builder.md` → `.claude/skills/prompt-builder/SKILL.md`, `log-this.md` → `.claude/skills/log-this/SKILL.md` — moved into the `.claude/skills/<name>/SKILL.md` layout Claude Code requires for a skill to be invocable as `/<name>`. Root-level `.md` files were never actually reachable via slash command.
+- `CLAUDE.md` — updated the skill inventory to reference `/prompt-builder`, `/coach`, `/context-window`, `/log-this`, `/push` and their `.claude/skills/` paths instead of root-level filenames; noted the `.claude/skills/<name>/SKILL.md` requirement for any new skill.
+
+### Context
+`coach.md` and `context_window.md` were also moved into `.claude/skills/coach/SKILL.md` and `.claude/skills/context-window/SKILL.md` on disk, but are intentionally left uncommitted (untracked) — their content still needs the same review pass already done for the other three skills before it enters git history.
+
 ## 2026-07-04 (ignore macOS Finder junk)
 
 ### Changed
