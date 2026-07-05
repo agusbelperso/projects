@@ -2,6 +2,19 @@
 
 ---
 
+## 2026-07-05 (adopt financial-analyst; fill in HR skills' missing references)
+
+### Added
+- `.claude/skills/financial-analyst/` — ported whole from the `claude-skills` remote's `finance` bundle (`SKILL.md`, `references/{financial-ratios-guide,valuation-methodology,forecasting-best-practices}.md`, `assets/{dcf_analysis_template,forecast_report_template,variance_report_template}.md` + sample/expected-output JSON, `scripts/{ratio_calculator,budget_variance_analyzer,dcf_valuation,forecast_builder}.py`), invocable as `/financial-analyst`. 1 of 3 skills in that bundle; `business-investment-advisor` and `saas-metrics-coach` were not adopted.
+
+### Changed
+- `docs/Strategic HR Cost Management.md` → `.claude/skills/operations-manager/references/cost_optimization.md` — renamed to match the file its own SKILL.md's "Reference Materials" section already expected but didn't have.
+- `docs/hr-forecasting-slides-reference.md` → `.claude/skills/people-analytics/references/hr_metrics.md` — same fix, for people-analytics' expected-but-missing reference.
+- `CLAUDE.md` — added `/financial-analyst` to the inventory, updated the `/operations-manager` and `/people-analytics` entries to reflect which of their expected reference files now actually exist vs. still don't, and removed the now-empty `docs/` section.
+
+### Context
+`financial-analyst` demonstrated what a skill's `references/` folder is supposed to look like (real, topic-specific docs) in contrast to the hr-operations skills, whose `references/` folders were entirely missing (confirmed missing upstream too, not just in this repo). The two `docs/` files were originally kept separate because their content didn't match either skill's expected reference filenames closely enough — but on reflection, `Strategic HR Cost Management.md` (a bottom-up cost model) is a direct fit for operations-manager's expected `cost_optimization.md`, and `hr-forecasting-slides-reference.md`'s KPI content (turnover, retention, hiring speed) matches people-analytics' expected `hr_metrics.md` closely enough to fill that gap instead of sitting outside the skill system. `docs/` is now empty and removed. Neither skill's other missing reference files (`process_design.md`, `lean_operations.md`, `vendor_management.md`, `predictive_models.md`, `survey_design.md`, `data_ethics.md`) have been reconstructed — still noted as gaps in `CLAUDE.md`.
+
 ## 2026-07-04 (add docs folder with HR forecasting slide reference)
 
 ### Added
